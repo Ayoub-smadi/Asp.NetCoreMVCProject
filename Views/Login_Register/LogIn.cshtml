@@ -1,0 +1,62 @@
+﻿@model User
+@{
+
+    Layout = "~/Views/shared/_Login&RegisterLayout.cshtml";
+
+}
+
+
+<!-- Sing in  Form -->
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="https://img.freepik.com/free-vector/my-password-concept-illustration_114360-6924.jpg?t=st=1715094705~exp=1715095305~hmac=01d139a84f2e2761f342ff05e59473b67af5f4fe9f097b72b215512de82d64eb" alt="sing up image"></figure>
+                <a asp-action="Register" class="signup-image-link">Create an account</a>
+            </div>
+
+            <div class="signin-form">
+                <h2 class="form-title">Sign In</h2>
+                <form asp-action="LogIn" method="post" class="register-form" id="login-form">
+                    <div class="form-group">
+                        <label asp-for="Username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" asp-for="Username" id="your_name" placeholder="UserName" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" asp-for="Password" id="your_pass" placeholder="Password" />
+                    </div>
+
+                    <style>
+                        .custom-btn {
+                            background-color: orange !important;
+                            color: black !important;
+                            border-color: orange !important; /* (Optional) Change border color if needed */
+                        }
+                    </style>
+
+                    <div class="form-group form-button">
+                        <input type="submit" name="signin" id="signin" class="form-submit btn custom-btn" value="Log in" />
+                    </div>
+                </form>
+                <style>
+                    .socials img {
+                        width: 40px; /* تحديد العرض */
+                        height: 40px; /* تحديد الارتفاع */
+                    }
+                </style>
+
+                <div class="social-login">
+                    <span class="social-label">Or login with</span>
+                    <ul class="socials">
+                        <li><a href="fasebook.com"><img src="https://cdn-icons-png.freepik.com/256/2/2164.png" alt="Facebook"></a></li>
+                        <li><a href="Twitter.com"><img src="https://cdn-icons-png.freepik.com/256/254/254405.png?semt=ais_hybrid" alt="Twitter"></a></li>
+                        <li><a href="Google.com"><img src="https://cdn-icons-png.freepik.com/256/5968/5968878.png?semt=ais_hybrid" alt="Google"></a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

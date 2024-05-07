@@ -1,0 +1,51 @@
+﻿@model GG.Models.Transaction
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Transaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Userid" class="control-label"></label>
+                <select asp-for="Userid" class ="form-control" asp-items="ViewBag.Userid"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Recipeid" class="control-label"></label>
+                <select asp-for="Recipeid" class ="form-control" asp-items="ViewBag.Recipeid"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Paymentstatus" class="control-label"></label>
+                <input asp-for="Paymentstatus" class="form-control" />
+                <span asp-validation-for="Paymentstatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Paymentdate" class="control-label"></label>
+                <input asp-for="Paymentdate" class="form-control" />
+                <span asp-validation-for="Paymentdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
